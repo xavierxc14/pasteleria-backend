@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Prueba JS</title>
+    <link rel="stylesheet" href="librerias/css/bootstrap.min.css">
+    <link rel="stylesheet" href="librerias/css/animate.css">
+    <link rel="stylesheet" href="librerias/css/angular-toastr.css">
+</head>
+
+<body class="animated bounce" ng-app="Prueba" ng-init="visible=true">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/app/index.html">Xavier Ñauñay</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#/nuevousuario">Nuevo Usuario</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="row">
+            <div class="animated bounceIn" ui-view>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JQUERY -->
+    <script src="librerias/js/jquery-2.2.0.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="librerias/js/bootstrap.js"></script>
+    <!-- ANGULAR -->
+    <script src="librerias/js/angular.js"></script>
+
+    <!-- DEPENDENCIAS ANGULAR -->
+    <script src="librerias/js/angular-ui-router.js"></script>
+
+    <script src="librerias/js/angular-animate.js"></script>
+    <script src="librerias/js/angular-resource.js"></script>
+    <script src="librerias/js/angular-toastr.tpls.js"></script>
+
+    <!-- APLICACION -->
+    <script src="app.js"></script>
+
+
+    <!-- FACTORIES -->
+    <script src="factory/UsuarioFactory.js"></script>
+    <script src="factory/PastelFactory.js"></script>
+    <script src="factory/IngredienteFactory.js"></script>
+
+
+    <!-- CONTROLADORES -->
+    <script src="controladores/HomeController.js"></script>
+    <script src="controladores/NuevoUsuarioController.js"></script>
+    <script src="controladores/PastelController.js"></script>
+
+</body>
+
+</html>

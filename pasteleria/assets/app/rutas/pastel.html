@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-sm-8">
+                <h3>{{usuario.nombre}} {{usuario.apellido}}</h3>
+                {{usuario.edad}}
+                <br>
+                {{usuario.correo}}
+            </div>
+            <div class="col-sm-4">
+                <h3>{{usuario.ciudad}}</h3>
+                <img style="max-width: 80px;" class="img-responsive" ng-src="{{usuario.foto}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <form class="animated pulse"
+              ng-submit="guardarPastel(pastel)">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input ng-model="pastel.nombre" type="text" class="form-control" id="nombre"
+                       placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <select ng-model="pastel.tipo" class="form-control" id="tipo">
+                    <option ng-repeat="tipo in tipos">
+                        {{tipo}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <input ng-model="pastel.foto" type="text" class="form-control" id="foto">
+            </div>
+            <div class="form-group">
+                <label for="preparacion">Preparación</label>
+                <textarea ng-model="pastel.preparacion" type="text" class="form-control" id="preparacion">
+                    </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4" ng-repeat="pastel in pasteles">
+        <div class="col-sm-4">
+            <img style="max-width: 80px;" class="img-responsive" ng-src="{{pastel.foto}}">
+            <br>
+
+            <form class="animated bounceIn"
+                  ng-submit="guardarIngrediente(ingrediente, pastel.id)">
+                <input ng-model="ingrediente.nombre" type="text" class="form-control" id="ingrediente"
+                       placeholder="Ingrediente">
+                <br>
+                <button type="submit" class="btn btn-primary">Añadir&#x00A;Ingrediente</button>
+            </form>
+            <ul>
+                <li ng-repeat="ingrediente in pastel.ingredientes">{{ingrediente.nombre}}</li>
+            </ul>
+        </div>
+        <div class="col-sm-8">
+            <h3>{{pastel.nombre}}</h3>
+            {{pastel.preparacion}}
+            <br>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-sm-8">
+                <h3>{{usuario.nombre}} {{usuario.apellido}}</h3>
+                {{usuario.edad}}
+                <br>
+                {{usuario.correo}}
+            </div>
+            <div class="col-sm-4">
+                <h3>{{usuario.ciudad}}</h3>
+                <img style="max-width: 80px;" class="img-responsive" ng-src="{{usuario.foto}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <form class="animated bounceIn"
+              ng-submit="guardarUsuario(usuario)">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input ng-model="usuario.nombre" type="text" class="form-control" id="nombre"
+                       placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input ng-model="usuario.apellido" type="text" class="form-control" id="apellido"
+                       placeholder="Apellido">
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input ng-model="usuario.edad" type="number" class="form-control" id="edad"
+                       placeholder="Edad">
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input ng-model="usuario.correo" type="email" class="form-control" id="correo"
+                       placeholder="Correo">
+            </div>
+            <div class="form-group">
+                <label for="ciudad">Ciudad</label>
+                <input ng-model="usuario.ciudad" type="text" class="form-control" id="ciudad"
+                       placeholder="Ciudad">
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input ng-model="usuario.foto" type="text" class="form-control" id="imagen"
+                       placeholder="Imagen">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

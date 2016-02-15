@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-sm-4" ng-repeat="usuario in usuarios">
+        <div class="row" ng-init="usuario.visible=false">
+            <div class="col-sm-8">
+                <h3>{{usuario.nombre}} {{usuario.apellido}}</h3>
+                {{usuario.edad}}
+                <br>
+                {{usuario.correo}}
+                <br>
+                <button ng-click="usuario.visible=!usuario.visible" class="btn btn-default">
+                    Editar
+                </button>
+                <a href="#/{{usuario.id}}/pastel" class="btn btn-success">Pasteles</a>
+
+
+                <form class="animated bounceIn" ng-show="usuario.visible"
+                      ng-submit="editarUsuario(usuario)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input ng-model="usuarios[$index].nombre" type="text" class="form-control" id="nombre"
+                               placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input ng-model="usuarios[$index].apellido" type="text" class="form-control" id="apellido"
+                               placeholder="Apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad</label>
+                        <input ng-model="usuarios[$index].edad" type="number" class="form-control" id="edad"
+                               placeholder="Edad">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input ng-model="usuarios[$index].correo" type="email" class="form-control" id="correo"
+                               placeholder="Correo">
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <input ng-model="usuarios[$index].ciudad" type="text" class="form-control" id="ciudad"
+                               placeholder="Ciudad">
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen">Imagen</label>
+                        <input ng-model="usuarios[$index].foto" type="text" class="form-control" id="imagen"
+                               placeholder="Imagen">
+                    </div>
+                    <button type="submit" class="btn btn-primary" ng-click="usuario.visible=!usuario.visible">Guardar</button>
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <h3>{{usuario.ciudad}}</h3>
+                <img style="max-width: 80px;" class="img-responsive" ng-src="{{usuario.foto}}">
+            </div>
+        </div>
+    </div>
+</div>
