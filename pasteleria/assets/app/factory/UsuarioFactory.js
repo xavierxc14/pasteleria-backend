@@ -1,7 +1,7 @@
 app.factory('UsuarioFactory', ['$resource', function ($resource) {
 
     var factory = $resource(
-        'http://localhost:1337/usuario/:idUsuario',
+        'https://pasteleria-backend-xavierxc14.c9users.io/usuario/:idUsuario',
         {
             idUsuario: '@idUsuario'
         },

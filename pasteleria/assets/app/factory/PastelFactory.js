@@ -1,7 +1,7 @@
 app.factory('PastelFactory', ['$resource', function ($resource) {
 
     var factory = $resource(
-        'http://localhost:1337/Pastel/:idPastel',
+        'https://pasteleria-backend-xavierxc14.c9users.io/Pastel/:idPastel',
         {
             idPastel: '@idPastel'
         },
@@ -14,7 +14,7 @@ app.factory('PastelFactory', ['$resource', function ($resource) {
 
             },
             buscarPorIdUsuario: {
-                url: 'http://localhost:1337/Pastel?idUsuario=:idUsuario',
+                url: 'https://pasteleria-backend-xavierxc14.c9users.io/Pastel?idUsuario=:idUsuario',
                 method: 'GET',
                 params: {
                     idPastel: '@idPastel'
